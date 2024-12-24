@@ -4,7 +4,7 @@ require("header.php");
 if (isset($_REQUEST['ok'])) 
 {
     // Gán hàm addslashes để chống sql injection
-    $search = addslashes($_GET['search']);
+    $search = $_GET['search'];
 
     // Nếu $search rỗng thì báo lỗi, tức là người dùng chưa nhập liệu mà đã nhấn submit.
     if (empty($search)) {
@@ -17,10 +17,16 @@ if (isset($_REQUEST['ok']))
 
         // Thực thi câu truy vấn
         $sql = mysqli_query($connection, $query);
-
+        // echo$query;
         // Đếm số đong trả về trong sql.
-        $num = mysqli_num_rows($sql);
-
+        if ($sql) {
+            // Truy vấn thành công, lấy số dòng
+            $num = mysqli_num_rows($sql);
+        } else {
+            // Truy vấn thất bại, đặt num = 0
+            $num = 0;
+        }
+        echo "<div class='mainmenu'><p><h2 style='font-weight: normal;'>Có <b>$num </b>kết quả trả về với từ khóa $search</h2></p>";
         // Nếu có kết quả thì hiển thị, ngược lại thì thông báo không tìm thấy kết quả
         if ($num > 0 && $search != "") 
         {

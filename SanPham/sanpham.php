@@ -42,6 +42,7 @@ if (isset($_GET["id"])) {
     - Bảo hành: '.$row['BaoHanh'].' năm';
     echo '<br/>- Số lượt xem: '.$row['SoLuotXem'].'';
     echo '<br/><br/><br/><a class="submit3" href="../giohang/index.php?mod=them&item='.$row['MaSanPham'].'">Mua hàng</a>';
+    echo'<br/><a href="download_image.php?image='.$row['HinhURL'].'" class="submit3 download-btn">Tải xuống hình ảnh</a>'; // Nút tải hình ảnh
     echo'</p>';
     echo'</td></tr></table>';
     echo'</div>';

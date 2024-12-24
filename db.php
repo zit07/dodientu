@@ -1,9 +1,9 @@
 <?php
 
-$connection = mysqli_connect('localhost', 'root', '', 'shop');
+$connection = mysqli_connect('localhost', 'root', 'root', 'shop');
 mysqli_query($connection, "SET NAMES 'utf8'");
 
 if (!$connection) {
-    exit('Kết nối không thành công!');
+    echo'Kết nối không thành công!';
 }
 ?>

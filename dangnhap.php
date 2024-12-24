@@ -9,11 +9,12 @@ if (isset($_POST['dangnhap']))
 {
      
     //Lấy dữ liệu nhập vào
-    $username = addslashes($_POST['TenDangNhap']);
-    $password = addslashes($_POST['MatKhau']);
+    $username = $_POST['TenDangNhap'];
+    $password = $_POST['MatKhau'];
     //Kiểm tra tên đăng nhập có tồn tại không
-    $sql = "SELECT TenDangNhap, MatKhau FROM taikhoan WHERE TenDangNhap='$username'";
+    $sql = "SELECT TenDangNhap, MatKhau FROM taikhoan WHERE TenDangNhap='$username' AND MatKhau='$password';";
     $query = mysqli_query($connection, $sql);
+    // echo$sql;
     if ($query == NULL) 
     {        echo "Tên đăng nhập này không tồn tại. Vui lòng kiểm tra lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
         exit;
@@ -21,12 +22,12 @@ if (isset($_POST['dangnhap']))
      
     //Lấy mật khẩu trong database ra
     $row = mysqli_fetch_array($query);
-     
+    
     //So sánh 2 mật khẩu có trùng khớp hay không
-    if ($password != $row['MatKhau']) {
-        echo "Mật khẩu không đúng. Vui lòng nhập lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
-        exit;
-    }
+    // if ($password != $row['MatKhau']) {
+    //     echo "Mật khẩu không đúng. Vui lòng nhập lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
+    //     exit;
+    // }
      
     //Lưu tên đăng nhập
     $_SESSION['username'] = $username;
