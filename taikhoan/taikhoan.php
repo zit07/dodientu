@@ -8,7 +8,7 @@ echo'
 <div id="vien">
     <div class="center">
         <div id="ban">
-            <a id="ba" href="./index.php">Trang chủ</a> > 
+            <a id="ba" href="/index.php">Trang chủ</a> > 
             <font color="#008744">Trang khách hàng</font>
         </div>
     </div>

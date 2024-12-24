@@ -26,7 +26,7 @@ if (isset($_GET["id"])) {
     echo'<div id="vien"><div class="center"><div id="ban"><font color="#008744">'.$row['TenSanPham'].'</font></div></div></div>';
     echo'<div class="list">';
     echo'<table><tr><td class="ShowAnh">';
-    echo'<img src="/dodientu/images/'.$row['HinhURL'].'"></td><td style="float: right;">';
+    echo'<img src="../images/'.$row['HinhURL'].'"></td><td style="float: right;">';
     echo'<h2>'.$row['TenSanPham'].'</h2>';
     echo'Thương hiệu: <font color="#008744">'.$thuonghieu['TenHangSanXuat'].'</font> | ';
     if ($row['SoLuong'] > 0) {
@@ -41,8 +41,7 @@ if (isset($_GET["id"])) {
     echo'<p>- Loại sản phẩm: '.$loaisp['TenLoaiSanPham'].'<br/>'.$row['MoTa'].'
     - Bảo hành: '.$row['BaoHanh'].' năm';
     echo '<br/>- Số lượt xem: '.$row['SoLuotXem'].'';
-    echo '<br/><br/><br/><a class="submit3" href="/dodientu/giohang/index.php?mod=them&item='.$row['MaSanPham'].'">Mua hàng</a>';
-    echo'<br/><a href="download_image.php?image='.$row['HinhURL'].'" class="submit3 download-btn">Tải xuống hình ảnh</a>'; // Nút tải hình ảnh
+    echo '<br/><br/><br/><a class="submit3" href="../giohang/index.php?mod=them&item='.$row['MaSanPham'].'">Mua hàng</a>';
     echo'</p>';
     echo'</td></tr></table>';
     echo'</div>';
@@ -57,9 +56,9 @@ if (isset($_GET["id"])) {
         $name = $show['TenSanPham'];
         $price = $show['GiaSanPham'];
         $hinh = $show['HinhURL'];
-        echo'<div class="list2"><a href="/dodientu/SanPham/index.php?mod=sanpham&id='.$id.'">
-        <img src="/dodientu/images/'.$hinh.'" width="215px" height="200px"></a>';
-        echo '<a id="tensp" href="/dodientu/SanPham/index.php?mod=sanpham&id='.$id.'"><p>'.$name.'</p></a>';
+        echo'<div class="list2"><a href="/SanPham/index.php?mod=sanpham&id='.$id.'">
+        <img src="/images/'.$hinh.'" width="215px" height="200px"></a>';
+        echo '<a id="tensp" href="/SanPham/index.php?mod=sanpham&id='.$id.'"><p>'.$name.'</p></a>';
 
         echo'<span>';
         echo number_format($price, 0).' đ<br>';

@@ -2,7 +2,7 @@
 include("header.php");
 if (isset($_SESSION['username']) && $_SESSION['username']){
     echo'Bạn đã đăng nhập rồi.';
-    echo'<a href="./index.php">Click để quay về trang chủ</a>';
+    echo'<a href="/index.php">Click để quay về trang chủ</a>';
 } else {
 ?>
 <div class="center">
@@ -32,7 +32,7 @@ if (isset($_SESSION['username']) && $_SESSION['username']){
             <input id="ngaysinh" type="date" name="NgaySinh" size="50" /></p></td></tr>
             <tr><td>
             <input type="submit" name="dangky" value="Đăng ký" onclick=" return KiemTra()" />
-            <a href="./dangnhap.php"> Đăng nhập </a>
+            <a href="/dangnhap.php"> Đăng nhập </a>
             </td></tr>
         </table>
     </form>
